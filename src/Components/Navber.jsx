@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import logo4 from '../assets/logo4.png';
 import Image from "next/image";
+import NavLink from './NavLink';
 
 const Navber = () => {
     return (
@@ -12,9 +13,9 @@ const Navber = () => {
                     <p><span className='text-gray-900 font-bold text-3xl'>Tile</span><span className='bg-gradient-to-r from-yellow-400 to-yellow-600 text-transparent bg-clip-text font-bold text-3xl'>Vogue</span></p>
                 </Link>
                 <ul className="flex items-center gap-4">
-                    <li><Link href="/" className='font-semibold'>Home</Link></li>
-                    <li><Link href="/tiles" className='font-semibold'>All Tiles</Link></li>
-                    <li><Link href="/myProfile" className='font-semibold'>My Profile</Link></li>
+                    <li><NavLink href="/" className='font-semibold'>Home</NavLink></li>
+                    <li><NavLink href="/tiles" className='font-semibold'>All Tiles</NavLink></li>
+                    <li><NavLink href="/myProfile" className='font-semibold'>My Profile</NavLink></li>
                 </ul>
                 <div>
                    Profile
