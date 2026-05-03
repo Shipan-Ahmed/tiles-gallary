@@ -41,7 +41,7 @@ const Banner = () => {
                                 "url(https://i.ibb.co.com/93Zd6pmV/scandinavian-living-room-with-sofas-fireplace-and-natural-wood-accents.jpg)"
                         }}>
                         <h1 className="text-white text-4xl font-bold bg-black/50 px-4 py-2 rounded">
-                            Premium Floor Tiles
+                            Premium Indoor Tiles
                         </h1>
                     </div>
                 </SwiperSlide>
@@ -67,7 +67,62 @@ const Banner = () => {
                                 "url(https://i.ibb.co.com/jPRdNxpS/240-F-900154080-b-Iek-VMvq-K8-Lf5u5ze-Ma5n0-Pug1mmvhdg.jpg)"
                         }}>
                         <h1 className="text-white text-4xl font-bold bg-black/50 px-4 py-2 rounded">
+                            Kitchen Marble Collection
+                        </h1>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className=" h-full bg-cover bg-center flex items-center justify-center"
+                        style={{
+                            backgroundImage:
+                                "url(https://i.ibb.co.com/vxr9J5m7/elegantslab-crop-c0-5-0-5-1600x775.png)"
+                        }}>
+                        <h1 className="text-white text-4xl font-bold bg-black/50 px-4 py-2 rounded">
                             Luxury Marble Collection
+                        </h1>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className=" h-full bg-cover bg-center flex items-center justify-center"
+                        style={{
+                            backgroundImage:
+                                "url(https://i.ibb.co.com/27yyGJCK/Classicsuperamb-crop-c0-5-0-5-1600x775-70.jpg)"
+                        }}>
+                        <h1 className="text-white text-4xl font-bold bg-black/50 px-4 py-2 rounded">
+                            Golden Marble Collection
+                        </h1>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className=" h-full bg-cover bg-center flex items-center justify-center"
+                        style={{
+                            backgroundImage:
+                                "url(https://i.ibb.co.com/rRmKCmp3/Ambience-crop-c0-5-0-5-1600x775-70.jpg)"
+                        }}>
+                        <h1 className="text-white text-4xl font-bold bg-black/50 px-4 py-2 rounded">
+                            Premium Floor Tiles Collection
+                        </h1>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className=" h-full bg-cover bg-center flex items-center justify-center"
+                        style={{
+                            backgroundImage:
+                                "url(https://i.ibb.co.com/cS8q2SK3/HDTAmb-crop-c0-5-0-5-1600x775-70.jpg)"
+                        }}>
+                        <h1 className="text-white text-4xl font-bold bg-black/50 px-4 py-2 rounded">
+                            Premium Outdoor Collection
+                        </h1>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className=" h-full bg-cover bg-center flex items-center justify-center"
+                        style={{
+                            backgroundImage:
+                                "url(https://i.ibb.co.com/VW0q1jgP/treadcollection-crop-c0-5-0-5-1600x775-70.jpg)"
+                        }}>
+                        <h1 className="text-white text-4xl font-bold bg-black/50 px-4 py-2 rounded">
+                            Gray Tiles Collection
                         </h1>
                     </div>
                 </SwiperSlide>
