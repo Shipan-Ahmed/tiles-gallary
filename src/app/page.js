@@ -2,7 +2,7 @@
 import Banner from "@/Components/Banner";
 import Features from "@/Components/Features";
 import Image from "next/image";
-
+export const dynamic = 'force-dynamic'
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center mt-10">
