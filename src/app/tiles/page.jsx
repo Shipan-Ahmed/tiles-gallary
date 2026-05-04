@@ -4,7 +4,7 @@ import getData from '@/data/dataFetching';
 import { Button, Card, Label, SearchField } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
-
+export const dynamic = 'force-dynamic'
 
 const AllTiles = async () => {
     const tiles = await getData();

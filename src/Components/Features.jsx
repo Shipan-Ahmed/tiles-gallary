@@ -1,7 +1,7 @@
 import getData from '@/data/dataFetching';
 import React from 'react';
 import TilesCard from './TilesCard';
-
+export const dynamic = 'force-dynamic'
 const Features = async () => {
     const features = await getData();
     console.log(features, "features");
