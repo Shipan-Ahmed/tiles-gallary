@@ -3,10 +3,13 @@ import { authClient } from '@/lib/auth-client';
 import { Check } from '@gravity-ui/icons';
 import { Button, Card, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
+import { FaGoogle } from 'react-icons/fa6';
 
 
 const SignupPage = () => {
+    const router = useRouter();
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -18,7 +21,7 @@ const SignupPage = () => {
             image: userData.Image,
             email: userData.email,
             password: userData.password,
-            callbackUrl: "/signin"
+          
         })
 
         console.log("signup response: ", { data, error });
@@ -27,9 +30,17 @@ const SignupPage = () => {
         }
         if (data) {
             alert("Sign up successful! Redirecting to Sign In page...");
+            router.push("/signin");
         }
 
     }
+
+    const signUp = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    }
+
     return (
         <Card className='w-full max-w-md mx-auto mt-10 p-6 rounded-lg shadow-lg'>
             <h2 className='text-2xl font-bold mb-6 text-center'>Sign Up</h2>
@@ -111,6 +122,12 @@ const SignupPage = () => {
             </Form>
             <div>
                 <p className='text-center mt-4'>Already have an account? <Link href="/signin" className='text-blue-500 hover:underline'>Sign In Now</Link></p>
+            </div>
+            <p className='text-center mt-4'>Or sign up with</p>
+            <div className='flex justify-center gap-4 mt-4'>
+                <Button className="btn btn-outline btn-primary w-full" onClick={signUp}>
+                    <span className='flex items-center gap-2'><FaGoogle />  Google</span>
+                </Button>
             </div>
         </Card>
     );

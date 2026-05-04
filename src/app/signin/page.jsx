@@ -3,10 +3,13 @@ import { authClient } from '@/lib/auth-client';
 import { Check } from '@gravity-ui/icons';
 import { Button, Card, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
+import { FaGoogle } from 'react-icons/fa6';
 
 
 const SigninPage = () => {
+    const router = useRouter();
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -16,7 +19,7 @@ const SigninPage = () => {
         const { data, error } = await authClient.signIn.email({
             email: userData.email,
             password: userData.password,
-            callbackUrl: "/tiles"
+        
         })
 
         console.log("signin response: ", { data, error });
@@ -24,10 +27,19 @@ const SigninPage = () => {
             alert("Sign in failed: " + error.message);
         }
         if (data) {
-            alert("Sign in successful! Redirecting...");
+            alert("Sign in successful! Redirecting to Home page...");
+            router.push("/");
         }
 
     }
+
+
+    const signIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    };
+
     return (
         <Card className='w-full max-w-md mx-auto mt-10 p-6 rounded-lg shadow-lg'>
             <h2 className='text-2xl font-bold mb-6 text-center'>Sign In</h2>
@@ -71,11 +83,17 @@ const SigninPage = () => {
                     <FieldError />
                 </TextField>
              
-                    <Button type="submit" className="w-full bg-yellow-500 text-white px-4 py-2 rounded">
+                <Button  type="submit" className="w-full bg-yellow-500 text-white px-4 py-2 rounded">
                         LOGIN
                     </Button>
                     <p className='text-center mt-4'>Don't have an account? <Link href="/signup" className='text-blue-500 hover:underline'>Sign Up Now</Link></p>
             </Form>
+            <p className='text-center mt-4'>Or sign in with</p>
+            <div className='flex justify-center gap-4 mt-4'>
+                <Button className="btn btn-outline btn-primary w-full" onClick={signIn}>
+                    <span className='flex items-center gap-2'><FaGoogle />  Google</span>
+                </Button>
+            </div>
         </Card>
     );
 };

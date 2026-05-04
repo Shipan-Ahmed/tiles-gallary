@@ -4,6 +4,7 @@ import logo4 from '../assets/logo4.png';
 import Image from "next/image";
 import NavLink from './NavLink';
 import { signOut, useSession } from '@/lib/auth-client';
+import { Avatar } from '@heroui/react';
 
 const Navber = () => {
     const { data, isPending } = useSession();
@@ -31,8 +32,12 @@ const Navber = () => {
                 <div>
                     {
                         user ? <>
-                            <span className='font-semibold mr-2  bg-sky-200 rounded-full px-4 py-2'>{user.name[0]}</span>
-                            <button onClick={() => {signOut()}}>Logout</button>
+                            <Avatar className='mr-4'>
+                                <Avatar.Image alt={user.name} src={user.image} referrerPolicy="no-referrer" />
+                                <Avatar.Fallback>{user.name[0]}</Avatar.Fallback>
+                            </Avatar>
+                            {/* <span className='font-semibold mr-2  bg-sky-200 rounded-full px-4 py-2'>{user.name[0]}</span> */}
+                            <button onClick={() => {signOut()}} className='btn bg-red-500 ml-2 text-white px-4 py-2 rounded'>Logout</button>
                         </> : <div className='flex gap-2'><Link href="/signin" className='btn bg-yellow-500 text-white px-4 py-2 rounded'>Sign In</Link>
                             <Link href="/signup" className='btn bg-green-500 text-white px-4 py-2 rounded'>Sign Up</Link></div>
                    }
