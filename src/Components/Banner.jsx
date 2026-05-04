@@ -26,7 +26,9 @@ const Banner = () => {
                 }}
                 loop={true}
                 className="h-full"
-
+                pagination={{
+                    clickable: true,
+                }}
                 // modules={[Autoplay]}
                 // autoplay={{ delay: 3000 }}
                 // loop={true}

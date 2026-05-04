@@ -1,10 +1,21 @@
-
+'use client';
 import Link from 'next/link';
 import logo4 from '../assets/logo4.png';
 import Image from "next/image";
 import NavLink from './NavLink';
+import { signOut, useSession } from '@/lib/auth-client';
 
 const Navber = () => {
+    const { data, isPending } = useSession();
+    if (isPending) {
+        return <div className='text-center py-4'><div><span className="loading loading-spinner text-error"></span></div></div>;
+    }
+    if (data) {
+        console.log("Session data in Navber: ", data);
+    }
+
+    const user = data?.user;
+
     return (
         <nav className="sticky top-0 z-40 w-full border-b border-separator bg-base-100">
             <header className="flex h-16 items-center justify-between px-6">
@@ -18,7 +29,13 @@ const Navber = () => {
                     <li><NavLink href="/myProfile" className='font-semibold'>My Profile</NavLink></li>
                 </ul>
                 <div>
-                   Profile
+                    {
+                        user ? <>
+                            <span className='font-semibold mr-2  bg-sky-200 rounded-full px-4 py-2'>{user.name[0]}</span>
+                            <button onClick={() => {signOut()}}>Logout</button>
+                        </> : <div className='flex gap-2'><Link href="/signin" className='btn bg-yellow-500 text-white px-4 py-2 rounded'>Sign In</Link>
+                            <Link href="/signup" className='btn bg-green-500 text-white px-4 py-2 rounded'>Sign Up</Link></div>
+                   }
                 </div>
             </header>
         </nav>
