@@ -137,6 +137,9 @@ const Banner = () => {
                     </button>
                 </Link>
             </section>
+            {/* <h1 className="text-4xl text-white left-1/2 transform -translate-x-1/2 bg-yellow/50 px-4 py-2 rounded font-bold top-20 absolute z-10 text-center mt-6">
+                Discover Your Perfect Aesthetic
+            </h1> */}
 
         </div>
     );
