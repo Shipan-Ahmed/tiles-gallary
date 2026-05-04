@@ -27,7 +27,7 @@ const Navber = () => {
                 <ul className="flex items-center gap-4">
                     <li><NavLink href="/" className='font-semibold'>Home</NavLink></li>
                     <li><NavLink href="/tiles" className='font-semibold'>All Tiles</NavLink></li>
-                    <li><NavLink href="/myProfile" className='font-semibold'>My Profile</NavLink></li>
+                    <li><NavLink href="/profile" className='font-semibold'>My Profile</NavLink></li>
                 </ul>
                 <div>
                     {
