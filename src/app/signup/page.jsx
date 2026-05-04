@@ -26,10 +26,10 @@ const SignupPage = () => {
 
         console.log("signup response: ", { data, error });
         if (error) {
-            alert("Sign up failed: " + error.message);
+            toast.error("Sign up failed: " + error.message);
         }
         if (data) {
-            alert("Sign up successful! Redirecting to Sign In page...");
+            toast.success("Sign up successful! Redirecting to Sign In page...");
             router.push("/signin");
         }
 

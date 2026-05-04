@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { FaGoogle } from 'react-icons/fa6';
+import { toast } from 'react-toastify';
 
 
 const SigninPage = () => {
@@ -24,10 +25,10 @@ const SigninPage = () => {
 
         console.log("signin response: ", { data, error });
         if (error) {
-            alert("Sign in failed: " + error.message);
+            toast.error("Sign in failed: " + error.message);
         }
         if (data) {
-            alert("Sign in successful! Redirecting to Home page...");
+            toast.success("Sign in successful! Redirecting to Home page...");
             router.push("/");
         }
 
