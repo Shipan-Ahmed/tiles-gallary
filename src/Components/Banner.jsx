@@ -2,6 +2,7 @@
 import Link from 'next/link';
 
 import Marquee from 'react-fast-marquee';
+import { LuSparkles } from 'react-icons/lu';
 
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,12 +11,30 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 const Banner = () => {
     return (
         <div className=' w-full h-[400px] relative'>
-            <div className='flex mb-4  bg-gray-200 items-center justify-center'>
-                <button className='btn btn-outline bg-red-500 px-4 py-2 text-white'>New Arrivals</button>
-                <Marquee speed={50} pauseOnHover={true} gradient={false} className='  w-full'>
-                    <p className="animate-marquee whitespace-nowrap ">
-                         Ceramic | Marble | Modern Designs | Best Quality Tiles
-                    </p>
+
+            <div className='flex mb-4 bg-slate-100 items-center overflow-hidden rounded-lg border border-gray-200'>
+                {/* Label with a "Flash" effect */}
+                <div className='bg-red-600 text-white px-6 py-3 font-bold text-sm uppercase tracking-wider whitespace-nowrap z-10 shadow-lg'>
+                    New Arrivals
+                </div>
+
+                <Marquee speed={60} pauseOnHover={true} gradient={true} gradientColor="white" gradientWidth={50}>
+                    <div className="flex gap-8 items-center py-2">
+                        <span className="flex items-center gap-2 font-medium text-gray-700">
+                            <LuSparkles className="text-yellow-500" /> Ceramic
+                        </span>
+                        <div className="badge badge-outline badge-warning font-semibold">Premium Marble</div>
+
+                        <span className="flex items-center gap-2 font-medium text-gray-700">
+                            <LuSparkles className="text-yellow-500" /> Modern Designs
+                        </span>
+                        <div className="badge badge-outline badge-info font-semibold">Limited Edition</div>
+
+                        <span className="flex items-center gap-2 font-medium text-gray-700">
+                            <LuSparkles className="text-yellow-500" /> Best Quality Tiles
+                        </span>
+                        <div className="badge badge-outline badge-success font-semibold">Eco-Friendly</div>
+                    </div>
                 </Marquee>
             </div>
             <Swiper

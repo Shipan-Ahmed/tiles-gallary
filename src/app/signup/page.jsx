@@ -5,6 +5,7 @@ import { Button, Card, FieldError, Form, Input, Label, TextField } from '@heroui
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import toast from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa6';
 
 
@@ -29,7 +30,7 @@ const SignupPage = () => {
             toast.error("Sign up failed: " + error.message);
         }
         if (data) {
-            toast.success("Sign up successful! Redirecting to Sign In page...");
+            toast.success("Sign up successful! ");
             router.push("/signin");
         }
 

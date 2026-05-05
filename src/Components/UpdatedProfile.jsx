@@ -2,6 +2,7 @@ import { authClient } from '@/lib/auth-client';
 import { Envelope } from '@gravity-ui/icons';
 import { Button, Input, Label, Modal, Surface, TextField } from '@heroui/react';
 import React from 'react';
+import toast from 'react-hot-toast';
 import { BiUser } from 'react-icons/bi';
 
 const UpdatedProfile = () => {
@@ -45,7 +46,7 @@ const UpdatedProfile = () => {
                                         <Button slot="close" variant="secondary">
                                             Cancel
                                         </Button>
-                                        <Button type='submit' slot="close">Save</Button>
+                                        <Button onClick={() => toast.success("Successfully saved ✅")} type='submit' slot="close">Save</Button>
                                     </Modal.Footer>
                                 </form>
                             </Surface>

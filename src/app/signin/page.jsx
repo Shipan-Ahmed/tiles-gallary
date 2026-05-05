@@ -5,11 +5,15 @@ import { Button, Card, FieldError, Form, Input, Label, TextField } from '@heroui
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import toast from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa6';
-import { toast } from 'react-toastify';
 
+
+// const notify = () => toast.success("Sign in successful! Redirecting to Home page...");
 
 const SigninPage = () => {
+   
+
     const router = useRouter();
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -28,7 +32,9 @@ const SigninPage = () => {
             toast.error("Sign in failed: " + error.message);
         }
         if (data) {
-            toast.success("Sign in successful! Redirecting to Home page...");
+            toast.success("Sign in successful!");
+            // notify();
+            
             router.push("/");
         }
 
