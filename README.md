@@ -4,7 +4,7 @@ A modern, responsive web application for showcasing and exploring premium tiles.
 
 ## 🌐 Live URL
 
-[Live Website Link](https://your-deployed-url.com) *(Update with your deployment URL)*
+[Live Website Link](https://tile-vogue.vercel.app)
 
 ## ✨ Key Features
 
@@ -127,7 +127,7 @@ tiles-gallery/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/tiles-gallery.git
+git clone https://github.com/Shipan-Ahmed/tiles-gallary
 cd tiles-gallery
 ```
 
@@ -327,9 +327,9 @@ This project is open source and available under the MIT License. See the [LICENS
 
 ## 📞 Contact & Support
 
-- **Email:** your-email@example.com
-- **GitHub:** [Your GitHub Profile](https://github.com/yourusername)
-- **Live Site:** [Tiles Gallery](https://your-deployed-url.com)
+- **Email:** shipanahmed69@gmail.com
+- **GitHub:** [Your GitHub Profile](https://github.com/Shipan-Ahmed)
+- **Live Site:** [Tiles Gallery](https://tile-vogue.vercel.app)
 
 ## 🎯 Project Goals
 
