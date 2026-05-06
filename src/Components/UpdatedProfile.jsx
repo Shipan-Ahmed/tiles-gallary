@@ -1,4 +1,4 @@
-import { authClient } from '@/lib/auth-client';
+import { authClient, useSession } from '@/lib/auth-client';
 import { Envelope } from '@gravity-ui/icons';
 import { Button, Input, Label, Modal, Surface, TextField } from '@heroui/react';
 import React from 'react';
@@ -6,6 +6,8 @@ import toast from 'react-hot-toast';
 import { BiUser } from 'react-icons/bi';
 
 const UpdatedProfile = () => {
+    const { isPending } = useSession()
+    
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -17,6 +19,9 @@ const UpdatedProfile = () => {
             image: updatedData.image,
         })
     }
+    
+    if (isPending) return <div><span className="loading loading-bars loading-xl"></span></div>
+
     return (
         <Modal>
             <Button variant="secondary">Edit Profile</Button>
