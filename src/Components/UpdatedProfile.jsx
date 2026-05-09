@@ -20,7 +20,7 @@ const UpdatedProfile = () => {
         })
     }
     
-    if (isPending) return <div><span className="loading loading-bars loading-xl"></span></div>
+    if (isPending) return <div ><span className="loading loading-bars loading-xl"></span></div>
 
     return (
         <Modal>
